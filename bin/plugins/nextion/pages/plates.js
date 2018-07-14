@@ -68,7 +68,7 @@ var Plates = function (_abstract) {
                 this.plates = _context.sent;
 
 
-                this.addListener("click_b2", function (e) {
+                this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
                 });
 
@@ -76,19 +76,19 @@ var Plates = function (_abstract) {
                   _this2.changePage("addPlate");
                 });
 
-                this.addListener("click_b4", function (e) {
+                this.addListener("click_b5", function (e) {
                   if (_this2.currentIndex + 0 < _this2.plates.length) _this2.changePage("plate", _this2.plates[_this2.currentIndex]);
                 });
-                this.addListener("click_b5", function (e) {
+                this.addListener("click_b6", function (e) {
                   if (_this2.currentIndex + 1 < _this2.plates.length) _this2.changePage("plate", _this2.plates[_this2.currentIndex + 1]);
                 });
-                this.addListener("click_b6", function (e) {
+                this.addListener("click_b7", function (e) {
                   if (_this2.currentIndex + 2 < _this2.plates.length) _this2.changePage("plate", _this2.plates[_this2.currentIndex + 2]);
                 });
-                this.addListener("click_b7", function (e) {
+                this.addListener("click_b4", function (e) {
                   if (_this2.currentIndex + 3 < _this2.plates.length) _this2.changePage("plate", _this2.plates[_this2.currentIndex + 3]);
                 });
-                this.addListener("click_b8", function (e) {
+                this.addListener("click_b3", function (e) {
                   if (_this2.currentIndex + 4 < _this2.plates.length) _this2.changePage("plate", _this2.plates[_this2.currentIndex + 4]);
                 });
 

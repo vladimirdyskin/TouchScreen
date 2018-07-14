@@ -107,16 +107,16 @@ var Home = function (_abstract) {
 
                      case 22:
 
-                        this.addListener("click_b2", function (e) {
+                        this.addListener("click_b1", function (e) {
                            _this2.changePage("plates");
                         });
 
-                        this.addListener("click_b4", function (e) {
+                        this.addListener("click_b3", function (e) {
                            idxP = Math.abs((idxP - 1) % _this2.profiles.length);
                            _this2.setText("t3", _this2.profiles[idxP].ProfileID + ": " + _this2.profiles[idxP].Title);
                         });
 
-                        this.addListener("click_b5", function (e) {
+                        this.addListener("click_b4", function (e) {
                            idxP = (idxP + 1) % _this2.profiles.length;
                            _this2.setText("t3", _this2.profiles[idxP].ProfileID + ": " + _this2.profiles[idxP].Title);
                         });
@@ -149,7 +149,7 @@ var Home = function (_abstract) {
 
                      case 32:
 
-                        this.addListener("click_b7", function (e) {
+                        this.addListener("click_b6", function (e) {
                            idxD = Math.abs((idxD - 1) % lbl.length);
                            _this2.setText("t6", lbl[idxD]);
                            fin = fs.readdirSync(pth[idxD]);
@@ -158,7 +158,7 @@ var Home = function (_abstract) {
                            _this2.list(idxF, fin);
                         });
 
-                        this.addListener("click_b8", function (e) {
+                        this.addListener("click_b7", function (e) {
                            idxD = (idxD + 1) % lbl.length;
                            _this2.setText("t6", lbl[idxD]);
                            fin = fs.readdirSync(pth[idxD]);

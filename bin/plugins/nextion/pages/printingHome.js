@@ -52,12 +52,12 @@ var PrintingHome = function (_abstract) {
                   _this2.changePage("printSettings");
                 });
 
-                this.addListener("click_b11", function (e) {
+                this.addListener("click_b1", function (e) {
                   console.log("stats");
                   _this2.changePage("stats");
                 });
 
-                this.addListener("click_b9", function (e) {
+                this.addListener("click_b2", function (e) {
                   _this2.manager.nanoDLP.unpause();
                 });
 

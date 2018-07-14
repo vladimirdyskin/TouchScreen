@@ -47,33 +47,33 @@ var Projector = function (_abstract) {
 
               case 2:
 
-                this.addListener("click_b2", function (e) {
+                this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
                 });
 
-                this.addListener("click_b4", function () {
+                this.addListener("click_b7", function () {
                   return _this2.nanoDLP.command("/shutter/open");
                 });
-                this.addListener("click_b8", function () {
+                this.addListener("click_b6", function () {
                   return _this2.nanoDLP.command("/shutter/close");
                 });
 
-                this.addListener("click_b3", function () {
-                  return _this2.nanoDLP.command("/button/press/1");
+                this.addListener("click_b8", function () {
+                  return _this2.nanoDLP.command("/projector/off");
                 });
                 this.addListener("click_b9", function () {
-                  return _this2.nanoDLP.command("/button/press/0");
+                  return _this2.nanoDLP.command("/projector/on");
                 });
 
-                this.addListener("click_bt_showwgrid", function () {
+                this.addListener("click_b3", function () {
                   if (_this2.status.Projecting) _this2.nanoDLP.command("/projector/blank");else _this2.nanoDLP.command("/projector/generate/calibration");
                 });
 
-                this.addListener("click_bt_showscreen", function () {
+                this.addListener("click_b4", function () {
                   if (_this2.status.Projecting) _this2.nanoDLP.command("/projector/blank");else _this2.nanoDLP.command("/projector/generate/white");
                 });
 
-                this.addListener("click_bt_showborder", function () {
+                this.addListener("click_b5", function () {
                   if (_this2.status.Projecting) _this2.nanoDLP.command("/projector/blank");else _this2.nanoDLP.command("/projector/generate/boundaries");
                 });
 
