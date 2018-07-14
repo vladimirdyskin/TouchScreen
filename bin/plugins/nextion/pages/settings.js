@@ -47,15 +47,15 @@ var Settings = function (_abstract) {
 
               case 2:
 
-                this.addListener("click_b4", function (e) {
+                this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
                 });
 
-                this.addListener("click_b2", function (e) {
+                this.addListener("click_b12", function (e) {
                   _this2.changePage("zAxis");
                 });
 
-                this.addListener("click_b3", function (e) {
+                this.addListener("click_b13", function (e) {
                   _this2.changePage("projector");
                 });
 

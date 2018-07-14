@@ -55,7 +55,7 @@ var Confirm = function (_abstract) {
 
               case 6:
 
-                this.addListener("click_b3", function (e) {
+                this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
                 });
 

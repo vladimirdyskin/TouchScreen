@@ -85,11 +85,11 @@ var Plate = function (_abstract) {
                 this.setText("t3", this.plate.TotalSolidArea + "ml");
                 this.setText("t7", this.plate.LayersCount + " layers");
 
-                this.addListener("click_b2", function (e) {
+                this.addListener("click_b1", function (e) {
                   _this2.changePage("plates");
                 });
 
-                this.addListener("click_b9", _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                this.addListener("click_b4", _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
                   return regeneratorRuntime.wrap(function _callee$(_context) {
                     while (1) {
                       switch (_context.prev = _context.next) {
@@ -108,7 +108,7 @@ var Plate = function (_abstract) {
                   }, _callee, _this2);
                 })));
 
-                this.addListener("click_b15", _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+                this.addListener("click_b3", _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
                   return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
                       switch (_context2.prev = _context2.next) {

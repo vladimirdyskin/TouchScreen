@@ -100,15 +100,15 @@ var Home = function (_abstract) {
 
               case 23:
 
-                this.addListener("click_b3", function (e) {
+                this.addListener("click_b4", function (e) {
                   _this2.changePage("settings");
                 });
 
-                this.addListener("click_b1", function (e) {
+                this.addListener("click_b3", function (e) {
                   _this2.changePage("plates");
                 });
 
-                this.addListener("click_b4", function (e) {
+                this.addListener("click_b6", function (e) {
                   _this2.changePage("confirm", {
                     text: "Are you sure you want to shutdown?",
                     confirmType: "shutdown",
@@ -124,7 +124,7 @@ var Home = function (_abstract) {
                   });
                 });
 
-                this.addListener("click_b6", function (e) {
+                this.addListener("click_b2", function (e) {
                   _this2.changePage("ipqr", {
                     text: "http://" + ip.address()
                   });

@@ -51,7 +51,7 @@ var Stats = function (_abstract) {
 
               case 2:
 
-                this.addListener("click_b11", function (e) {
+                this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
                 });
 

@@ -11,6 +11,10 @@ var _abstract2 = require("./abstract.js");
 
 var _abstract3 = _interopRequireDefault(_abstract2);
 
+var _requestPromiseNative = require("request-promise-native");
+
+var _requestPromiseNative2 = _interopRequireDefault(_requestPromiseNative);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
@@ -50,55 +54,62 @@ var ZAxis = function (_abstract) {
 
               case 2:
 
-                this.addListener("click_b16", function (e) {
+                this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
                 });
 
                 this.addListener("click_b12", function (e) {
-                  _this2.up();
+                  //Vverh
+
+                  result = (0, _requestPromiseNative2.default)({
+                     uri: global.SERVER_URL + "/gcode",
+                     formData: {
+                        'gcode': {
+                           value: "g1 z0 f100"
+                        }
+                     },
+                     method: 'POST'
+                  });
+
+                  console.log("result", result);
                 });
 
                 this.addListener("click_b13", function (e) {
-                  _this2.down();
+                  //Vniz
+
+                  result = (0, _requestPromiseNative2.default)({
+                     uri: global.SERVER_URL + "/gcode",
+                     formData: {
+                        'gcode': {
+                           value: "g1 z0 f100"
+                        }
+                     },
+                     method: 'POST'
+                  });
+
                 });
 
+                this.addListener("click_b18", function () {
+                  return this.nextion.setValue("t7", "0.1");
+                });
                 this.addListener("click_b11", function () {
-                  return _this2.setBtn(11);
+                  return this.nextion.setValue("t7", "1");
                 });
                 this.addListener("click_b10", function () {
-                  return _this2.setBtn(10);
+                  return this.nextion.setValue("t7", "10");
                 });
                 this.addListener("click_b9", function () {
-                  return _this2.setBtn(9);
-                });
-                this.addListener("click_b8", function () {
-                  return _this2.setBtn(8);
-                });
-                this.addListener("click_b7", function () {
-                  return _this2.setBtn(7);
-                });
-                this.addListener("click_b6", function () {
-                  return _this2.setBtn(6);
-                });
-                this.addListener("click_b5", function () {
-                  return _this2.setBtn(5);
-                });
-                this.addListener("click_b2", function () {
-                  return _this2.setBtn(2);
+                  return this.nextion.setValue("t7", "100");
                 });
 
-                this.addListener("click_b3", function () {
-                  return _this2.nanoDLP.command("/z-axis/top");
-                });
-                this.addListener("click_b4", function () {
-                  return _this2.nanoDLP.command("/z-axis/bottom");
-                });
-                this.addListener("click_b14", function () {
-                  return _this2.nanoDLP.command("/z-axis/touch-limit");
-                });
-                this.addListener("click_b15", function () {
-                  return _this2.nanoDLP.command("/z-axis/calibrate");
-                });
+                // this.addListener("click_b15", function () {
+                //   //Kalibrovka
+                //   return _this2.nanoDLP.command("");
+                // });
+                // this.addListener("click_b14", function () {
+                //   //Do datchika
+                //   return _this2.nanoDLP.command("";
+                // });
 
                 this.setBtn(10);
 
