@@ -63,15 +63,15 @@ var ZAxis = function (_abstract) {
 
                   result = (0, _requestPromiseNative2.default)({
                      uri: global.SERVER_URL + "/gcode",
-                     formData: {
+                     form: {
                         'gcode': {
                            value: "g1 z0 f100"
                         }
                      },
                      method: 'POST'
                   });
-
                   console.log("result", result);
+
                 });
 
                 this.addListener("click_b13", function (e) {
@@ -79,13 +79,14 @@ var ZAxis = function (_abstract) {
 
                   result = (0, _requestPromiseNative2.default)({
                      uri: global.SERVER_URL + "/gcode",
-                     formData: {
+                     form: {
                         'gcode': {
                            value: "g1 z0 f100"
                         }
                      },
                      method: 'POST'
                   });
+                  console.log("result", result);
 
                 });
 
