@@ -65,15 +65,15 @@ var Projector = function (_abstract) {
                   return _this2.nanoDLP.command("/button/press/0");
                 });
 
-                this.addListener("click_b5", function () {
+                this.addListener("click_bt_showwgrid", function () {
                   if (_this2.status.Projecting) _this2.nanoDLP.command("/projector/blank");else _this2.nanoDLP.command("/projector/generate/calibration");
                 });
 
-                this.addListener("click_b6", function () {
+                this.addListener("click_bt_showscreen", function () {
                   if (_this2.status.Projecting) _this2.nanoDLP.command("/projector/blank");else _this2.nanoDLP.command("/projector/generate/white");
                 });
 
-                this.addListener("click_b7", function () {
+                this.addListener("click_bt_showborder", function () {
                   if (_this2.status.Projecting) _this2.nanoDLP.command("/projector/blank");else _this2.nanoDLP.command("/projector/generate/boundaries");
                 });
 
