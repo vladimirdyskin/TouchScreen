@@ -85,9 +85,9 @@ var Settings = function (_abstract) {
                 this.setText("t2", status.mem);
                 this.setText("t5", Math.ceil(parseInt(status.temp)) + "°C");
 
-                this.nextion.addToWaveForm(13, 0, parseInt(status.proc));
-                this.nextion.addToWaveForm(12, 0, parseInt(status.mem));
-                this.nextion.addToWaveForm(11, 0, Math.ceil(parseInt(status.temp)));
+                this.nextion.addToWaveForm(3, 0, parseInt(status.proc));
+                this.nextion.addToWaveForm(6, 0, parseInt(status.mem));
+                this.nextion.addToWaveForm(9, 0, Math.ceil(parseInt(status.temp)));
 
               case 6:
               case "end":
