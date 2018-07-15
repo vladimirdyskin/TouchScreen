@@ -15,6 +15,8 @@ var _requestPromiseNative = require("request-promise-native");
 
 var _requestPromiseNative2 = _interopRequireDefault(_requestPromiseNative);
 
+var zMove = 0;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
@@ -58,61 +60,90 @@ var ZAxis = function (_abstract) {
                   _this2.changePage("home");
                 });
 
-                this.addListener("click_b12", function (e) {
-                  //Vverh
-
-                  this.addListener("click_b12", function () {
+                this.addListener("click_b12", function () {
                  //Vverh
-
                  var result = (0, _requestPromiseNative2.default)({
                           uri: global.SERVER_URL + "/gcode",
                           formData: {
-                             'gcode': "123"
+                             'gcode': "G91\n G1Z" + this.zMove + "F200\nG90\n"
                           },
                           method: 'POST'
                        });
 
                 });
 
-
-                });
-
                 this.addListener("click_b13", function (e) {
                   //Vniz
-
                   var result = (0, _requestPromiseNative2.default)({
                            uri: global.SERVER_URL + "/gcode",
                            formData: {
-                              'gcode': "123"
+                             'gcode': "G91\n G1Z-" + this.zMove + "F200\nG90\n"
                            },
                            method: 'POST'
                         });
-
                 });
 
+                this.addListener("click_b16", function (e) {
+                  //TiltUp
+                  var result = (0, _requestPromiseNative2.default)({
+                           uri: global.SERVER_URL + "/gcode",
+                           formData: {
+                              'gcode': "S1000;\nM4;"
+                           },
+                           method: 'POST'
+                        });
+                });
+
+                this.addListener("click_b17", function (e) {
+                  //TiltDown
+                  var result = (0, _requestPromiseNative2.default)({
+                           uri: global.SERVER_URL + "/gcode",
+                           formData: {
+                              'gcode': "S1000;\nM3;"
+                           },
+                           method: 'POST'
+                        });
+                });
+
+                this.addListener("click_b14", function (e) {
+                  //DoDatchika
+                  var result = (0, _requestPromiseNative2.default)({
+                           uri: global.SERVER_URL + "/gcode",
+                           formData: {
+                              'gcode': "G38.3 Z200 F200;"
+                           },
+                           method: 'POST'
+                        });
+                });
+
+                this.addListener("click_b15", function (e) {
+                  //Calibrovka
+                  var result = (0, _requestPromiseNative2.default)({
+                           uri: global.SERVER_URL + "/gcode",
+                           formData: {
+                              'gcode': "G91\nG1 Z-15 F250\nG38.3 Z16 F100\nG1 Z-140 F400\nG1 Z-10 F100\nG28.1; Set Zero Axis Z\nG92 Z0;\nG90;"
+                           },
+                           method: 'POST'
+                        });
+                });
+
+
                 this.addListener("click_b18", function () {
+                  this.zMove = "0.1";
                   return this.setText("t7", "0.1");
                 });
                 this.addListener("click_b11", function () {
+                  this.zMove = "1";
                   return this.setText("t7", "1");
                 });
                 this.addListener("click_b10", function () {
+                  this.zMove = "10";
                   return this.setText("t7", "10");
                 });
                 this.addListener("click_b9", function () {
+                  this.zMove = "100";
                   return this.setText("t7", "100");
                 });
-
-                // this.addListener("click_b15", function () {
-                //   //Kalibrovka
-                //   return _this2.nanoDLP.command("");
-                // });
-                // this.addListener("click_b14", function () {
-                //   //Do datchika
-                //   return _this2.nanoDLP.command("";
-                // });
-
-                this.setBtn(10);
 
               case 18:
               case "end":
@@ -127,166 +158,6 @@ var ZAxis = function (_abstract) {
       }
 
       return init;
-    }()
-  }, {
-    key: "up",
-    value: function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                this.move("up");
-
-              case 1:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function up() {
-        return _ref2.apply(this, arguments);
-      }
-
-      return up;
-    }()
-  }, {
-    key: "down",
-    value: function () {
-      var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                this.move("down");
-
-              case 1:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3, this);
-      }));
-
-      function down() {
-        return _ref3.apply(this, arguments);
-      }
-
-      return down;
-    }()
-  }, {
-    key: "move",
-    value: function () {
-      var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(direction) {
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.t0 = this.currentButton;
-                _context4.next = _context4.t0 === 11 ? 3 : _context4.t0 === 10 ? 6 : _context4.t0 === 9 ? 9 : _context4.t0 === 8 ? 12 : _context4.t0 === 7 ? 15 : _context4.t0 === 6 ? 18 : _context4.t0 === 5 ? 21 : _context4.t0 === 2 ? 24 : 27;
-                break;
-
-              case 3:
-                _context4.next = 5;
-                return this.nanoDLP.command("/z-axis/move/" + direction + "/micron/100000");
-
-              case 5:
-                return _context4.abrupt("break", 27);
-
-              case 6:
-                _context4.next = 8;
-                return this.nanoDLP.command("/z-axis/move/" + direction + "/micron/10000");
-
-              case 8:
-                return _context4.abrupt("break", 27);
-
-              case 9:
-                _context4.next = 11;
-                return this.nanoDLP.command("/z-axis/move/" + direction + "/micron/1000");
-
-              case 11:
-                return _context4.abrupt("break", 27);
-
-              case 12:
-                _context4.next = 14;
-                return this.nanoDLP.command("/z-axis/move/" + direction + "/micron/500");
-
-              case 14:
-                return _context4.abrupt("break", 27);
-
-              case 15:
-                _context4.next = 17;
-                return this.nanoDLP.command("/z-axis/move/" + direction + "/micron/100");
-
-              case 17:
-                return _context4.abrupt("break", 27);
-
-              case 18:
-                _context4.next = 20;
-                return this.nanoDLP.command("/z-axis/move/" + direction + "/pulse/100");
-
-              case 20:
-                return _context4.abrupt("break", 27);
-
-              case 21:
-                _context4.next = 23;
-                return this.nanoDLP.command("/z-axis/move/" + direction + "/pulse/10");
-
-              case 23:
-                return _context4.abrupt("break", 27);
-
-              case 24:
-                _context4.next = 26;
-                return this.nanoDLP.command("/z-axis/move/" + direction + "/pulse/1");
-
-              case 26:
-                return _context4.abrupt("break", 27);
-
-              case 27:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4, this);
-      }));
-
-      function move(_x2) {
-        return _ref4.apply(this, arguments);
-      }
-
-      return move;
-    }()
-  }, {
-    key: "setBtn",
-    value: function () {
-      var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(id) {
-        return regeneratorRuntime.wrap(function _callee5$(_context5) {
-          while (1) {
-            switch (_context5.prev = _context5.next) {
-              case 0:
-                _context5.next = 2;
-                return this.nextion.setValue("bt" + this.currentButton, 0);
-
-              case 2:
-                this.currentButton = id;
-                _context5.next = 5;
-                return this.nextion.setValue("bt" + this.currentButton, 1);
-
-              case 5:
-              case "end":
-                return _context5.stop();
-            }
-          }
-        }, _callee5, this);
-      }));
-
-      function setBtn(_x3) {
-        return _ref5.apply(this, arguments);
-      }
-
-      return setBtn;
     }()
   }, {
     key: "update",

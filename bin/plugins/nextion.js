@@ -57,7 +57,6 @@ var Confirm = function (_abstract) {
               case 0:
                 this.isPrinting = null;
                 this.currentPageId = null;
-
                 console.log("connect to port " + this.config.plugins.nextion.port);
 
                 _context.next = 5;

@@ -35,6 +35,7 @@ var ScreenManager = function () {
   _createClass(ScreenManager, [{
     key: "init",
     value: function () {
+
       var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
         var i;
         return regeneratorRuntime.wrap(function _callee$(_context) {

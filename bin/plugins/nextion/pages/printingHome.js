@@ -47,7 +47,7 @@ var PrintingHome = function (_abstract) {
             switch (_context.prev = _context.next) {
               case 0:
 
-                this.addListener("click_b10", function (e) {
+                this.addListener("click_b11", function (e) {
                   console.log("printSettings");
                   _this2.changePage("printSettings");
                 });
