@@ -61,45 +61,46 @@ var ZAxis = function (_abstract) {
                 this.addListener("click_b12", function (e) {
                   //Vverh
 
-                  result = (0, _requestPromiseNative2.default)({
-                     uri: global.SERVER_URL + "/gcode",
-                     formData: {
-                        'gcode': {
-                           value: "g1 z0 f100"
-                        }
-                     },
-                     method: 'POST'
-                  });
+                  this.addListener("click_b12", function () {
+                 //Vverh
 
-                  console.log("result", result);
+                 var result = (0, _requestPromiseNative2.default)({
+                          uri: global.SERVER_URL + "/gcode",
+                          formData: {
+                             'gcode': "123"
+                          },
+                          method: 'POST'
+                       });
+
+                });
+
+
                 });
 
                 this.addListener("click_b13", function (e) {
                   //Vniz
 
-                  result = (0, _requestPromiseNative2.default)({
-                     uri: global.SERVER_URL + "/gcode",
-                     formData: {
-                        'gcode': {
-                           value: "g1 z0 f100"
-                        }
-                     },
-                     method: 'POST'
-                  });
+                  var result = (0, _requestPromiseNative2.default)({
+                           uri: global.SERVER_URL + "/gcode",
+                           formData: {
+                              'gcode': "123"
+                           },
+                           method: 'POST'
+                        });
 
                 });
 
                 this.addListener("click_b18", function () {
-                  return this.nextion.setValue("t7", "0.1");
+                  return this.setText("t7", "0.1");
                 });
                 this.addListener("click_b11", function () {
-                  return this.nextion.setValue("t7", "1");
+                  return this.setText("t7", "1");
                 });
                 this.addListener("click_b10", function () {
-                  return this.nextion.setValue("t7", "10");
+                  return this.setText("t7", "10");
                 });
                 this.addListener("click_b9", function () {
-                  return this.nextion.setValue("t7", "100");
+                  return this.setText("t7", "100");
                 });
 
                 // this.addListener("click_b15", function () {
