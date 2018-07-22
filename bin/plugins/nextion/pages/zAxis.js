@@ -155,10 +155,10 @@ var ZAxis = function (_abstract) {
                   //DoDatchika
 
                   console.log("click_b14");
-                    //  _this2.changePage("confirm", {
-                    //    text: "Начать калибровку положения платформы?\rВНИМАНИЕ!\rоткрутите винты калибровки платформы",
-                    //    confirmType: "calibrovka",
-                    //    returnPage: "zAxis"
+                     _this.changePage("confirm", {
+                       text: "Начать калибровку положения платформы?\rВНИМАНИЕ!\rоткрутите винты калибровки платформы",
+                       confirmType: "calibrovka",
+                       returnPage: "zAxis"
 
 
                   // var result = (0, _requestPromiseNative2.default)({
