@@ -155,7 +155,7 @@ var ZAxis = function (_abstract) {
                   //DoDatchika
 
                   console.log("click_b14");
-                     _this.changePage("confirm", {
+                     _this2.changePage("confirm", {
                        text: "Начать калибровку положения платформы?\rВНИМАНИЕ!\rоткрутите винты калибровки платформы",
                        confirmType: "calibrovka",
                        returnPage: "zAxis"
@@ -183,20 +183,20 @@ var ZAxis = function (_abstract) {
 
 
                 this.addListener("click_b18", function () {
-                  this.zMove = "0.1";
-                  return this.setText("t7", "0.1");
+                  _this2.zMove = "0.1";
+                  return _this2.setText("t7", "0.1");
                 });
                 this.addListener("click_b11", function () {
-                  this.zMove = "1";
-                  return this.setText("t7", "1");
+                  _this2.zMove = "1";
+                  return _this2.setText("t7", "1");
                 });
                 this.addListener("click_b10", function () {
-                  this.zMove = "10";
-                  return this.setText("t7", "10");
+                  _this2.zMove = "10";
+                  return _this2.setText("t7", "10");
                 });
                 this.addListener("click_b9", function () {
-                  this.zMove = "100";
-                  return this.setText("t7", "100");
+                  _this2.zMove = "100";
+                  return _this2.setText("t7", "100");
                 });
 
               case 18:
