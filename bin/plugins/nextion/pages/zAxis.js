@@ -184,20 +184,20 @@ var ZAxis = function (_abstract) {
 
 
                 this.addListener("click_b18", function () {
-                  _this2.zMove = "0.1";
-                  return _this2.setText("t7", "0.1");
+                  this.zMove = "0.1";
+                  return this.setText("t7", "0.1");
                 });
                 this.addListener("click_b11", function () {
-                  _this2.zMove = "1";
-                  return _this2.setText("t7", "1");
+                  this.zMove = "1";
+                  return this.setText("t7", "1");
                 });
                 this.addListener("click_b10", function () {
-                  _this2.zMove = "10";
-                  return _this2.setText("t7", "10");
+                  this.zMove = "10";
+                  return this.setText("t7", "10");
                 });
                 this.addListener("click_b9", function () {
-                  _this2.zMove = "100";
-                  return _this2.setText("t7", "100");
+                  this.zMove = "100";
+                  return this.setText("t7", "100");
                 });
 
               case 18:
