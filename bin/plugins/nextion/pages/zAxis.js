@@ -58,11 +58,11 @@ var ZAxis = function (_abstract) {
               _context.prev = 2;
 
               if (!(options && options.confirmResult && options.confirmResult)) {
-                _context.next = 19;
+                _context.next = 14;
                 break;
               }
 
-              _context.next = options.confirmType === "calibrovka" ? 7 : options.confirmType === "dodatchika" ? 11 : 19;
+              _context.next = options.confirmType === "calibrovka" ? 7 : options.confirmType === "dodatchika" ? 11 : 14;
               break;
 
             case 7:
@@ -75,7 +75,7 @@ var ZAxis = function (_abstract) {
                        method: 'POST'
                     });
               this.changePage("zAxis");
-              return _context.abrupt("break", 19);
+              return _context.abrupt("break", 14);
 
             case 11:
               console.log("dodatchika");
@@ -89,7 +89,7 @@ var ZAxis = function (_abstract) {
                     });
 
               this.changePage("zAxis");
-              return _context.abrupt("break", 19);
+              return _context.abrupt("break", 14);
 
             case 14:
               _context.next = 19;
@@ -155,10 +155,10 @@ var ZAxis = function (_abstract) {
                   //DoDatchika
 
                   console.log("click_b14");
-                     _this2.changePage("confirm", {
-                       text: "Начать калибровку положения платформы?\rВНИМАНИЕ!\rоткрутите винты калибровки платформы",
-                       confirmType: "dodatchika",
-                       returnPage: "zAxis"
+                    //  _this2.changePage("confirm", {
+                    //    text: "Начать калибровку положения платформы?\rВНИМАНИЕ!\rоткрутите винты калибровки платформы",
+                    //    confirmType: "calibrovka",
+                    //    returnPage: "zAxis"
 
 
                   // var result = (0, _requestPromiseNative2.default)({
