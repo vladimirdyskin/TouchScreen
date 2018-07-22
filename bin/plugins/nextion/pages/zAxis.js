@@ -55,7 +55,6 @@ var ZAxis = function (_abstract) {
                 return this.setScreen("zAxis");
 
               case 2:
-<<<<<<< HEAD
               _context2.prev = 2;
 
               if (!(options && options.confirmResult && options.confirmResult)) {
@@ -103,9 +102,6 @@ var ZAxis = function (_abstract) {
               console.log("error", _context2.t1);
 
             case 19:
-=======
-
->>>>>>> parent of 38226bc... перевод
                 this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
                 });
