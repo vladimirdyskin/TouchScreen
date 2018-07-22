@@ -108,6 +108,7 @@ var ZAxis = function (_abstract) {
 
                 this.addListener("click_b12", function () {
                  //Vverh
+                 console.log(this.zMove);
                  var result = (0, _requestPromiseNative2.default)({
                           uri: global.SERVER_URL + "/gcode",
                           formData: {
@@ -120,6 +121,7 @@ var ZAxis = function (_abstract) {
 
                 this.addListener("click_b13", function (e) {
                   //Vniz
+                  console.log(this.zMove);
                   var result = (0, _requestPromiseNative2.default)({
                            uri: global.SERVER_URL + "/gcode",
                            formData: {
@@ -155,9 +157,9 @@ var ZAxis = function (_abstract) {
                   //DoDatchika
 
                   console.log("click_b14");
-                     _this2.changePage("confirm", {
-                       text: "Начать калибровку положения платформы?\rВНИМАНИЕ!\rоткрутите винты калибровки платформы",
-                       confirmType: "calibrovka",
+                     this.changePage("confirm", {
+                       text: "Ehat do datchika?\rwarning!\rwarning",
+                       confirmType: "dodatchika",
                        returnPage: "zAxis"
                        });
 
@@ -173,13 +175,20 @@ var ZAxis = function (_abstract) {
 
                 this.addListener("click_b15", function (e) {
                   //Calibrovka
-                  var result = (0, _requestPromiseNative2.default)({
-                           uri: global.SERVER_URL + "/gcode",
-                           formData: {
-                              'gcode': "G91\nG1 Z-15 F250\nG38.3 Z16 F100\nG1 Z-140 F400\nG1 Z-10 F100\nG28.1; Set Zero Axis Z\nG92 Z0;\nG90;"
-                           },
-                           method: 'POST'
-                        });
+                  this.changePage("confirm", {
+                    text: "Kalibrovka?\rwarning!\rwarning",
+                    confirmType: "calibrovka",
+                    returnPage: "zAxis"
+                    });
+
+                  // var result = (0, _requestPromiseNative2.default)({
+                  //          uri: global.SERVER_URL + "/gcode",
+                  //          formData: {
+                  //             'gcode': "G91\nG1 Z-15 F250\nG38.3 Z16 F100\nG1 Z-140 F400\nG1 Z-10 F100\nG28.1; Set Zero Axis Z\nG92 Z0;\nG90;"
+                  //          },
+                  //          method: 'POST'
+                  //       });
+
                 });
 
 
