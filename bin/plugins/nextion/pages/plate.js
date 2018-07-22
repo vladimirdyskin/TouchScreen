@@ -114,7 +114,7 @@ var Plate = function (_abstract) {
                       switch (_context2.prev = _context2.next) {
                         case 0:
                           _this2.changePage("confirm", {
-                            text: "Are you sure you want to delete\rthe following  plate:\r\r" + _this2.plate.Path,
+                            text: "Удалить задание:\r\r" + _this2.plate.Path,
                             confirmType: "deleteplate",
                             data0: _this2.plate.PlateID,
                             returnPage: "plates"
@@ -179,10 +179,10 @@ var Plate = function (_abstract) {
                 this.index = index == 0 ? 1 : index;
 
                 _context4.next = 3;
-                return this.setText("t12", "Loading " + this.index + "/" + this.plate.LayersCount);
+                return this.setText("t12", "Загрузка " + this.index + "/" + this.plate.LayersCount);
 
               case 3:
-                this.setText("t9", "layer " + this.index + "/" + this.plate.LayersCount);
+                this.setText("t9", "Слой " + this.index + "/" + this.plate.LayersCount);
                 _context4.next = 6;
                 return this.nanoDLP.getCurrentPlateLayer(this.plate.PlateID, this.index);
 

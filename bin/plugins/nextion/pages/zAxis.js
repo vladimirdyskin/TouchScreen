@@ -55,6 +55,54 @@ var ZAxis = function (_abstract) {
                 return this.setScreen("zAxis");
 
               case 2:
+              _context2.prev = 2;
+
+              if (!(options && options.confirmResult && options.confirmResult)) {
+                _context2.next = 14;
+                break;
+              }
+
+              _context2.next = options.confirmType === "calibrovka" ? 7 : options.confirmType === "dodatchika" ? 11 : 14;
+              break;
+
+            case 7:
+              console.log("calibrovka");
+              var result = (0, _requestPromiseNative2.default)({
+                       uri: global.SERVER_URL + "/gcode",
+                       formData: {
+                          'gcode': "G91\nG1 Z-15 F250\nG38.3 Z16 F100\nG1 Z-140 F400\nG1 Z-10 F100\nG28.1; Set Zero Axis Z\nG92 Z0;\nG90;"
+                       },
+                       method: 'POST'
+                    });
+              this.changePage("zAxis");
+              return _context2.abrupt("break", 14);
+
+            case 11:
+              console.log("dodatchika");
+
+              var result = (0, _requestPromiseNative2.default)({
+                       uri: global.SERVER_URL + "/gcode",
+                       formData: {
+                          'gcode': "G38.3 Z200 F200;"
+                       },
+                       method: 'POST'
+                    });
+
+              this.changePage("zAxis");
+              return _context2.abrupt("break", 14);
+
+            case 14:
+              _context2.next = 19;
+              break;
+
+            case 16:
+              _context2.prev = 16;
+              _context2.t1 = _context2["catch"](2);
+
+              console.log("error", _context2.t1);
+
+            case 19:
+              _context2.prev = 19;
 
                 this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
@@ -107,24 +155,38 @@ var ZAxis = function (_abstract) {
 
                 this.addListener("click_b14", function (e) {
                   //DoDatchika
-                  var result = (0, _requestPromiseNative2.default)({
-                           uri: global.SERVER_URL + "/gcode",
-                           formData: {
-                              'gcode': "G38.3 Z200 F200;"
-                           },
-                           method: 'POST'
-                        });
+
+                  console.log("click_b3");
+                  _this2.changePage("confirm", {
+                    text: "Отправить платформу до датчика?\rЭто переместит платформу\rв верхнее положение.",
+                    confirmType: "dodatchika",
+                    returnPage: "zAxis"
+
+                  // var result = (0, _requestPromiseNative2.default)({
+                  //          uri: global.SERVER_URL + "/gcode",
+                  //          formData: {
+                  //             'gcode': "G38.3 Z200 F200;"
+                  //          },
+                  //          method: 'POST'
+                  //       });
                 });
 
                 this.addListener("click_b15", function (e) {
                   //Calibrovka
-                  var result = (0, _requestPromiseNative2.default)({
-                           uri: global.SERVER_URL + "/gcode",
-                           formData: {
-                              'gcode': "G91\nG1 Z-15 F250\nG38.3 Z16 F100\nG1 Z-140 F400\nG1 Z-10 F100\nG28.1; Set Zero Axis Z\nG92 Z0;\nG90;"
-                           },
-                           method: 'POST'
-                        });
+                  console.log("click_b3");
+                  _this2.changePage("confirm", {
+                    text: "Начать калибровку положения платформы?\rВНИМАНИЕ!\rоткрутите винты калибровки платформы",
+                    confirmType: "calibrovka",
+                    returnPage: "zAxis"
+
+
+                  // var result = (0, _requestPromiseNative2.default)({
+                  //          uri: global.SERVER_URL + "/gcode",
+                  //          formData: {
+                  //             'gcode': "G91\nG1 Z-15 F250\nG38.3 Z16 F100\nG1 Z-140 F400\nG1 Z-10 F100\nG28.1; Set Zero Axis Z\nG92 Z0;\nG90;"
+                  //          },
+                  //          method: 'POST'
+                  //       });
                 });
 
 
@@ -145,7 +207,7 @@ var ZAxis = function (_abstract) {
                   return this.setText("t7", "100");
                 });
 
-              case 18:
+              case 20:
               case "end":
                 return _context.stop();
             }
