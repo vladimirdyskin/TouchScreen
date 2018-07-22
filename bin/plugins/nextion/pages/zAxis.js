@@ -58,11 +58,11 @@ var ZAxis = function (_abstract) {
               _context2.prev = 2;
 
               if (!(options && options.confirmResult && options.confirmResult)) {
-                _context2.next = 14;
+                _context2.next = 19;
                 break;
               }
 
-              _context2.next = options.confirmType === "calibrovka" ? 7 : options.confirmType === "dodatchika" ? 11 : 14;
+              _context2.next = options.confirmType === "calibrovka" ? 7 : options.confirmType === "dodatchika" ? 11 : 19;
               break;
 
             case 7:
