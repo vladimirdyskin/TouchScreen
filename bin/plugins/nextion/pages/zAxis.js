@@ -157,7 +157,7 @@ var ZAxis = function (_abstract) {
                   //DoDatchika
 
                   console.log("click_b14");
-                     this.changePage("confirm", {
+                     _this2.changePage("confirm", {
                        text: "Ehat do datchika?\rwarning!\rwarning",
                        confirmType: "dodatchika",
                        returnPage: "zAxis"
@@ -175,7 +175,7 @@ var ZAxis = function (_abstract) {
 
                 this.addListener("click_b15", function (e) {
                   //Calibrovka
-                  this.changePage("confirm", {
+                  _this2.changePage("confirm", {
                     text: "Kalibrovka?\rwarning!\rwarning",
                     confirmType: "calibrovka",
                     returnPage: "zAxis"
