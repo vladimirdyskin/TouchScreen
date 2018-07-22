@@ -102,8 +102,6 @@ var ZAxis = function (_abstract) {
               console.log("error", _context2.t1);
 
             case 19:
-              _context2.prev = 19;
-
                 this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
                 });
