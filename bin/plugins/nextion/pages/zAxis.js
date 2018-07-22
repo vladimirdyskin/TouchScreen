@@ -159,6 +159,7 @@ var ZAxis = function (_abstract) {
                        text: "Начать калибровку положения платформы?\rВНИМАНИЕ!\rоткрутите винты калибровки платформы",
                        confirmType: "calibrovka",
                        returnPage: "zAxis"
+                       });
 
 
                   // var result = (0, _requestPromiseNative2.default)({
