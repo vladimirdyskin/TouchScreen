@@ -55,14 +55,14 @@ var ZAxis = function (_abstract) {
                 return this.setScreen("zAxis");
 
               case 2:
-              _context2.prev = 2;
+              _context.prev = 2;
 
               if (!(options && options.confirmResult && options.confirmResult)) {
-                _context2.next = 19;
+                _context.next = 19;
                 break;
               }
 
-              _context2.next = options.confirmType === "calibrovka" ? 7 : options.confirmType === "dodatchika" ? 11 : 19;
+              _context.next = options.confirmType === "calibrovka" ? 7 : options.confirmType === "dodatchika" ? 11 : 14;
               break;
 
             case 7:
@@ -75,7 +75,7 @@ var ZAxis = function (_abstract) {
                        method: 'POST'
                     });
               this.changePage("zAxis");
-              return _context2.abrupt("break", 14);
+              return _context.abrupt("break", 14);
 
             case 11:
               console.log("dodatchika");
@@ -89,17 +89,17 @@ var ZAxis = function (_abstract) {
                     });
 
               this.changePage("zAxis");
-              return _context2.abrupt("break", 14);
+              return _context.abrupt("break", 14);
 
             case 14:
-              _context2.next = 19;
+              _context.next = 19;
               break;
 
             case 16:
-              _context2.prev = 16;
-              _context2.t1 = _context2["catch"](2);
+              _context.prev = 16;
+              _context.t1 = _context["catch"](2);
 
-              console.log("error", _context2.t1);
+              console.log("error", _context.t1);
 
             case 19:
                 this.addListener("click_b1", function (e) {
