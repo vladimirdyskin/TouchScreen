@@ -117,6 +117,42 @@ var Abstract = function () {
 
       return setText;
     }()
+
+  }, {
+    key: "setTextRus",
+    value: function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(txt, val) {
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                if (!(this.history[txt] == val)) {
+                  _context3.next = 2;
+                  break;
+                }
+
+                return _context3.abrupt("return");
+
+              case 2:
+                this.history[txt] = val;
+                _context3.next = 5;
+                return this.nextion.setTextRus(txt, val);
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function setTextRus(_x4, _x5) {
+        return _ref3.apply(this, arguments);
+      }
+
+      return setTextRus;
+    }()
+
   }, {
     key: "setValue",
     value: function () {
