@@ -48,6 +48,7 @@ var Home = function (_abstract) {
 
               case 2:
                 _context2.next = 4;
+                this.setTextRus("t6", "Работает!!!");
                 return this.setText("t0", "Not Printing");
 
               case 4:

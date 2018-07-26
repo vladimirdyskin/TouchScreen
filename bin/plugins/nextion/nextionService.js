@@ -223,6 +223,37 @@ var NextionService = function (_EventEmitter) {
       return setText;
     }()
   }, {
+
+    key: 'setTextRus',
+    value: function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(cmp, txt) {
+        var text,  textRus;
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                text = txt.toString().split("\r").join('"+"\\r"+"');
+                textRus = text.toString("ascii");
+                _context3.next = 3;
+                return this._writeUart(cmp + '.txt="' + textRus + '"');
+
+              case 3:
+              case 'end':
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function setText(_x2, _x3) {
+        return _ref3.apply(this, arguments);
+      }
+
+      return setText;
+    }()
+  }, {
+
+
     key: 'setValue',
     value: function () {
       var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(cmp, txt) {
