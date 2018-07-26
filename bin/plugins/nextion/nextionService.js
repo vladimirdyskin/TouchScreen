@@ -245,11 +245,11 @@ var NextionService = function (_EventEmitter) {
         }, _callee3, this);
       }));
 
-      function setText(_x2, _x3) {
+      function setTextRus(_x2, _x3) {
         return _ref3.apply(this, arguments);
       }
 
-      return setText;
+      return setTextRus;
     }()
   }, {
 
