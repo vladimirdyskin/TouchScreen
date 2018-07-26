@@ -7,7 +7,7 @@
   },
   "plugins":{
     "nextion":{
-      "port":"/dev/ttyAMA0 ",
+      "port":"COM11",
       "sleep": 65535
     },
     "plates":{
