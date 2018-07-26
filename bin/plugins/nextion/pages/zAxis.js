@@ -55,14 +55,14 @@ var ZAxis = function (_abstract) {
                 return this.setScreen("zAxis");
 
               case 2:
-              _context2.prev = 2;
+              _context.prev = 2;
 
               if (!(options && options.confirmResult && options.confirmResult)) {
-                _context2.next = 14;
+                _context.next = 14;
                 break;
               }
 
-              _context2.next = options.confirmType === "calibrovka" ? 7 : options.confirmType === "dodatchika" ? 11 : 14;
+              _context.next = options.confirmType === "calibrovka" ? 7 : options.confirmType === "dodatchika" ? 11 : 14;
               break;
 
             case 7:
@@ -75,7 +75,7 @@ var ZAxis = function (_abstract) {
                        method: 'POST'
                     });
               this.changePage("zAxis");
-              return _context2.abrupt("break", 14);
+              return _context.abrupt("break", 14);
 
             case 11:
               console.log("dodatchika");
@@ -89,27 +89,26 @@ var ZAxis = function (_abstract) {
                     });
 
               this.changePage("zAxis");
-              return _context2.abrupt("break", 14);
+              return _context.abrupt("break", 14);
 
             case 14:
-              _context2.next = 19;
+              _context.next = 19;
               break;
 
             case 16:
-              _context2.prev = 16;
-              _context2.t1 = _context2["catch"](2);
+              _context.prev = 16;
+              _context.t1 = _context["catch"](2);
 
-              console.log("error", _context2.t1);
+              console.log("error", _context.t1);
 
             case 19:
-              _context2.prev = 19;
-
                 this.addListener("click_b1", function (e) {
                   _this2.changePage("home");
                 });
 
                 this.addListener("click_b12", function () {
                  //Vverh
+                 console.log(this.zMove);
                  var result = (0, _requestPromiseNative2.default)({
                           uri: global.SERVER_URL + "/gcode",
                           formData: {
@@ -122,6 +121,7 @@ var ZAxis = function (_abstract) {
 
                 this.addListener("click_b13", function (e) {
                   //Vniz
+                  console.log(this.zMove);
                   var result = (0, _requestPromiseNative2.default)({
                            uri: global.SERVER_URL + "/gcode",
                            formData: {
@@ -156,11 +156,13 @@ var ZAxis = function (_abstract) {
                 this.addListener("click_b14", function (e) {
                   //DoDatchika
 
-                  console.log("click_b3");
-                  _this2.changePage("confirm", {
-                    text: "Отправить платформу до датчика?\rЭто переместит платформу\rв верхнее положение.",
-                    confirmType: "dodatchika",
-                    returnPage: "zAxis"
+                  console.log("click_b14");
+                     _this2.changePage("confirm", {
+                       text: "Ehat do datchika?\rwarning!\rwarning",
+                       confirmType: "dodatchika",
+                       returnPage: "zAxis"
+                       });
+
 
                   // var result = (0, _requestPromiseNative2.default)({
                   //          uri: global.SERVER_URL + "/gcode",
@@ -173,12 +175,11 @@ var ZAxis = function (_abstract) {
 
                 this.addListener("click_b15", function (e) {
                   //Calibrovka
-                  console.log("click_b3");
                   _this2.changePage("confirm", {
-                    text: "Начать калибровку положения платформы?\rВНИМАНИЕ!\rоткрутите винты калибровки платформы",
+                    text: "Kalibrovka?\rwarning!\rwarning",
                     confirmType: "calibrovka",
                     returnPage: "zAxis"
-
+                    });
 
                   // var result = (0, _requestPromiseNative2.default)({
                   //          uri: global.SERVER_URL + "/gcode",
@@ -187,6 +188,7 @@ var ZAxis = function (_abstract) {
                   //          },
                   //          method: 'POST'
                   //       });
+
                 });
 
 
@@ -207,7 +209,7 @@ var ZAxis = function (_abstract) {
                   return this.setText("t7", "100");
                 });
 
-              case 20:
+              case 18:
               case "end":
                 return _context.stop();
             }

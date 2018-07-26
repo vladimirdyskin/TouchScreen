@@ -51,13 +51,6 @@ var Projector = function (_abstract) {
                   _this2.changePage("home");
                 });
 
-                // this.addListener("click_b7", function () {
-                //   return _this2.nanoDLP.command("/shutter/open");
-                // });
-                // this.addListener("click_b6", function () {
-                //   return _this2.nanoDLP.command("/shutter/close");
-                // });
-
                 this.addListener("click_b6", function () {
                   return _this2.nanoDLP.command("/projector/off");
                 });

@@ -90,7 +90,7 @@ var PrintSettings = function (_abstract) {
 
                 this.addListener("click_b3", function (e) {
                   _this2.changePage("confirm", {
-                    text: "Действительно включить отладку\rпечати?\rЭто поднимет платформу на 25мм вверх после\rзасвета текущего слоя и\rпродолжит печать.",
+                    text: "Are you sure you want to debug\rprinting?\rIt will move 25mm to the top after\rthe current layer completed and\rcontinue to print.",
                     confirmType: "debug",
                     returnPage: "printSettings"
                   });
@@ -99,7 +99,7 @@ var PrintSettings = function (_abstract) {
                 this.addListener("click_b4", function (e) {
                   console.log("click_b3");
                   _this2.changePage("confirm", {
-                    text: "Поставить печать на паузу?\rЭто приостановит печать\rпосле засветки текущего слоя.",
+                    text: "Are you sure you want to pause\r printing?\rIt will pause after the current\rlayer completed.",
                     confirmType: "pause",
                     returnPage: "printSettings"
                   });
@@ -107,7 +107,7 @@ var PrintSettings = function (_abstract) {
 
                 this.addListener("click_b5", function (e) {
                   _this2.changePage("confirm", {
-                    text: "Остановить печать\rЭто остановит печать после\rзасветки текущего слоя.",
+                    text: "Are you sure you want to stop\r printing?\rIt will stop after the current\rlayer completed.",
                     confirmType: "stop",
                     returnPage: "printSettings"
                   });
@@ -201,7 +201,7 @@ var PrintSettings = function (_abstract) {
 
               case 17:
                 _context3.next = 19;
-                return this.setText("t10", remaining_time + " of " + total_time + "мин");
+                return this.setText("t10", remaining_time + " of " + total_time + "min");
 
               case 19:
               case "end":

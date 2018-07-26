@@ -48,6 +48,7 @@ var Home = function (_abstract) {
 
               case 2:
                 _context2.next = 4;
+                this.setTextRus("t6", "Работает!!!");
                 return this.setText("t0", "Not Printing");
 
               case 4:
@@ -76,7 +77,7 @@ var Home = function (_abstract) {
                 exec = require('child_process').exec;
 
                 this.setScreen("progress");
-                this.setText("t0", "Выключение...");
+                this.setText("t0", "Shutdown in progress...");
                 exec('shutdown now', function (error, stdout, stderr) {});
                 return _context2.abrupt("return", _context.stop());
 
@@ -94,7 +95,7 @@ var Home = function (_abstract) {
                 exec = require('child_process').exec;
 
                 this.setScreen("progress");
-                this.setText("t0", "Перезагрузка...");
+                this.setText("t0", "Reboot in progress...");
                 exec('shutdown -r now', function (error, stdout, stderr) {});
                 return _context2.abrupt("return", _context.stop());
 
@@ -110,7 +111,7 @@ var Home = function (_abstract) {
 
                 this.addListener("click_b6", function (e) {
                   _this2.changePage("confirm", {
-                    text: "Выключть?",
+                    text: "Are you sure you want to shutdown?",
                     confirmType: "shutdown",
                     returnPage: "home"
                   });
@@ -118,7 +119,7 @@ var Home = function (_abstract) {
 
                 this.addListener("click_b5", function (e) {
                   _this2.changePage("confirm", {
-                    text: "Перезагрузить?",
+                    text: "Are you sure you want to reboot?",
                     confirmType: "reboot",
                     returnPage: "home"
                   });
