@@ -240,11 +240,18 @@ var NextionService = function (_EventEmitter) {
 //                var text = "t6.txt=\"я\"";
                 var iconv = new Iconv( 'UTF-8', 'ISO-8859-5');
                 var textRus = iconv.convert(text);
+                cmp += '.txt="';
                 var arr = [];
-                for (var i = 0, l = String(textRus).length; i < l; i++) {
-                  var ascii = String(textRus).charCodeAt(i);
+                for (var i = 0, l = String(cmp).length; i < l; i++) {
+                  var ascii = String(cmp).charCodeAt(i);
                   arr.push(ascii);
                 }
+
+                for (var i = 0, l = String(textRus).length; i < l; i++) {
+                  var ascii = textRus[i];
+                  arr.push(ascii);
+                }
+                arr.push(0x22);
                 arr.push(255);
                 arr.push(255);
                 arr.push(255);
@@ -252,8 +259,7 @@ var NextionService = function (_EventEmitter) {
 
                 _context3.next = 3;
                 console.log("send command : " + b);
-                
-                return this.port.write(this.hex(b));
+                return this.port.write(b);
 
               case 3:
               case 'end':
