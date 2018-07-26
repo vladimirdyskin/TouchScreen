@@ -230,7 +230,7 @@ var NextionService = function (_EventEmitter) {
     value: function () {
       var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(cmp, txt) {
         var text,  textRus;
-        var iconv = new Iconv('UTF-8', 'ISO-8859-5');
+        var iconv = new Iconv('UTF-8', 'ASCII');
 
         return regeneratorRuntime.wrap(function _callee3$(_context3) {
           while (1) {
