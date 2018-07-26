@@ -230,16 +230,30 @@ var NextionService = function (_EventEmitter) {
     value: function () {
       var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(cmp, txt) {
         var text,  textRus;
-        var iconv = new Iconv('UTF-8', 'ISO-8859-5');
 
         return regeneratorRuntime.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 text = txt.toString().split("\r").join('"+"\\r"+"');
-                textRus = iconv.convert(text);
+//                textRus = iconv.decode(text);
+//                var text = "t6.txt=\"я\"";
+                var iconv = new Iconv( 'UTF-8', 'ISO-8859-5');
+                var textRus = iconv.convert(text);
+                var arr = [];
+                for (var i = 0, l = String(textRus).length; i < l; i++) {
+                  var ascii = String(textRus).charCodeAt(i);
+                  arr.push(ascii);
+                }
+                arr.push(255);
+                arr.push(255);
+                arr.push(255);
+                var b = new Buffer(arr);
+
                 _context3.next = 3;
-                return this._writeUart(cmp + '.txt="' + textRus + '"');
+                console.log("send command : " + b);
+                
+                return this.port.write(this.hex(b));
 
               case 3:
               case 'end':
