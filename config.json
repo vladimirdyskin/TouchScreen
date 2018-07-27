@@ -7,7 +7,7 @@
   },
   "plugins":{
     "nextion":{
-      "port":"COM11",
+      "port":"dev/tty.Bluetooth-Incoming-Port",
       "sleep": 65535
     },
     "plates":{
