@@ -94,10 +94,8 @@ var Confirm = function (_abstract) {
               case 0:
                 if (status) {
                   _context2.next = 2;
-                  console.log(status);
                   break;
                 }
-                console.log("not");
 
                 return _context2.abrupt("return");
 
