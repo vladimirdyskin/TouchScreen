@@ -174,7 +174,7 @@ var Home = function (_abstract) {
 
                         this.addListener("click_b9", function (e) {
                            if (idxF + 0 < fin.length && _this2.evalFile(fin[idxF + 0])) _this2.changePage("confirm", {
-                              text: "Are you sure you want to create\rthe follwing new plate?\r\rProfile: " + _this2.profiles[idxP].Title + "\rPath: " + pth[idxD] + "\rFile: " + fin[idxF + 0],
+                              text: "Создать новое задание?\r\rProfile: " + _this2.profiles[idxP].Title + "\rПуть: " + pth[idxD] + "\rФайл: " + fin[idxF + 0],
                               confirmType: "addplate",
                               returnPage: "addPlate",
                               data0: _this2.profiles[idxP].ProfileID,
@@ -185,7 +185,7 @@ var Home = function (_abstract) {
 
                         this.addListener("click_b10", function (e) {
                            if (idxF + 1 < fin.length && _this2.evalFile(fin[idxF + 1])) _this2.changePage("confirm", {
-                              text: "Are you sure you want to create\rthe following new plate?\r\rProfile: " + _this2.profiles[idxP].Title + "\rPath: " + pth[idxD] + "\rFile: " + fin[idxF + 1],
+                              text: "Создать новое заданием?\r\rProfile: " + _this2.profiles[idxP].Title + "\rПуть: " + pth[idxD] + "\rФайл: " + fin[idxF + 1],
                               confirmType: "addplate",
                               returnPage: "addPlate",
                               data0: _this2.profiles[idxP].ProfileID,
@@ -196,7 +196,7 @@ var Home = function (_abstract) {
 
                         this.addListener("click_b11", function (e) {
                            if (idxF + 2 < fin.length && _this2.evalFile(fin[idxF + 2])) _this2.changePage("confirm", {
-                              text: "Are you sure you want to create\rthe following new plate?\r\rProfile: " + _this2.profiles[idxP].Title + "\rPath: " + pth[idxD] + "\rFile: " + fin[idxF + 2],
+                              text: "Создать новое задание?\r\rProfile: " + _this2.profiles[idxP].Title + "\rПуть: " + pth[idxD] + "\rФайл: " + fin[idxF + 2],
                               confirmType: "addplate",
                               returnPage: "addPlate",
                               data0: _this2.profiles[idxP].ProfileID,
@@ -207,7 +207,7 @@ var Home = function (_abstract) {
 
                         this.addListener("click_b12", function (e) {
                            if (idxF + 3 < fin.length && _this2.evalFile(fin[idxF + 3])) _this2.changePage("confirm", {
-                              text: "Are you sure you want to create\rthe following new plate?\r\rProfile: " + _this2.profiles[idxP].Title + "\rPath: " + pth[idxD] + "\rFile: " + fin[idxF + 3],
+                              text: "Создать новое задание?\r\rProfile: " + _this2.profiles[idxP].Title + "\rПуть: " + pth[idxD] + "\rФайл: " + fin[idxF + 3],
                               confirmType: "addplate",
                               returnPage: "addPlate",
                               data0: _this2.profiles[idxP].ProfileID,

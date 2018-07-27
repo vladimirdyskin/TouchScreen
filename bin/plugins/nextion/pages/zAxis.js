@@ -176,7 +176,7 @@ var ZAxis = function (_abstract) {
                 this.addListener("click_b15", function (e) {
                   //Calibrovka
                   _this2.changePage("confirm", {
-                    text: "Калибровка?\rВНИМАНИЕ!\rоткрутите калибровочные болты",
+                    text: "Выполнить калибровку?\rВНИМАНИЕ!\rоткрутите калибровочные болты",
                     confirmType: "calibrovka",
                     returnPage: "zAxis"
                     });

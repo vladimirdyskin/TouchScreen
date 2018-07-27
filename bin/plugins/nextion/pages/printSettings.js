@@ -90,7 +90,7 @@ var PrintSettings = function (_abstract) {
 
                 this.addListener("click_b3", function (e) {
                   _this2.changePage("confirm", {
-                    text: "Are you sure you want to debug\rprinting?\rIt will move 25mm to the top after\rthe current layer completed and\rcontinue to print.",
+                    text: "Проверить печать?\rэто поднимет платформу на 25mm вверх после\rзавершения печати текущего слоя.",
                     confirmType: "debug",
                     returnPage: "printSettings"
                   });
@@ -99,7 +99,7 @@ var PrintSettings = function (_abstract) {
                 this.addListener("click_b4", function (e) {
                   console.log("click_b3");
                   _this2.changePage("confirm", {
-                    text: "Are you sure you want to pause\r printing?\rIt will pause after the current\rlayer completed.",
+                    text: "Приостановить печать?\rпечать приостановиться после\rзавершения печати текущего слоя.",
                     confirmType: "pause",
                     returnPage: "printSettings"
                   });
@@ -107,7 +107,7 @@ var PrintSettings = function (_abstract) {
 
                 this.addListener("click_b5", function (e) {
                   _this2.changePage("confirm", {
-                    text: "Are you sure you want to stop\r printing?\rIt will stop after the current\rlayer completed.",
+                    text: "Остановить печать?\r печать остановиться после\rзавершения печати текущего слоя.",
                     confirmType: "stop",
                     returnPage: "printSettings"
                   });

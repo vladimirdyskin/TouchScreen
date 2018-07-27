@@ -114,7 +114,7 @@ var Plate = function (_abstract) {
                       switch (_context2.prev = _context2.next) {
                         case 0:
                           _this2.changePage("confirm", {
-                            text: "Are you sure you want to delete\rthe following  plate:\r\r" + _this2.plate.Path,
+                            text: "Удалить задание:\r\r" + _this2.plate.Path,
                             confirmType: "deleteplate",
                             data0: _this2.plate.PlateID,
                             returnPage: "plates"
