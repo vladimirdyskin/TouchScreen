@@ -55,6 +55,7 @@ var ScreenManager = function () {
 
               case 4:
                 i++;
+                console.log(i);
                 _context.next = 1;
                 break;
 

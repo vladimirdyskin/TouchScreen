@@ -682,6 +682,7 @@ var NextionService = function (_EventEmitter) {
                 //await this._writeUart('bauds=115200');
 
                 debug("screenInitialized");
+                console.log("screenInit");
 
               case 11:
               case 'end':

@@ -4,3 +4,5 @@
 node_modules/
 build/
 
+errorOutput.log
+output.log
