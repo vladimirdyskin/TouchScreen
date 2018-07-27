@@ -134,13 +134,13 @@ var PrintingHome = function (_abstract) {
 
               case 20:
                 _context2.next = 22;
-                return this.setText("t6", this.isPause ? "Pause" : "Printing");
+                return this.setTextRus("t6", this.isPause ? "Пауза" : "Печать");
 
               case 22:
                 remaining_time = Math.round((status.LayersCount - status.LayerID) * status.LayerTime / 1000000000 / 60);
                 total_time = Math.round(status.LayersCount * status.LayerTime / 1000000000 / 60);
                 _context2.next = 26;
-                return this.setText("t0", status.LayerID + "/" + status.LayersCount);
+                return this.setTextRus("t0", status.LayerID + "/" + status.LayersCount);
 
               case 26:
                 _context2.next = 28;
@@ -148,15 +148,15 @@ var PrintingHome = function (_abstract) {
 
               case 28:
                 _context2.next = 30;
-                return this.setText("t1", remaining_time + " of " + total_time + "min");
+                return this.setTextRus("t1", remaining_time + " из " + total_time + "мин");
 
               case 30:
                 _context2.next = 32;
-                return this.setText("t2", log.msg);
+                return this.setTextRus("t2", log.msg);
 
               case 32:
                 _context2.next = 34;
-                return this.setText("t7", status.Path);
+                return this.setTextRus("t7", status.Path);
 
               case 34:
                 if (!(this.history.layer != status.LayerID)) {

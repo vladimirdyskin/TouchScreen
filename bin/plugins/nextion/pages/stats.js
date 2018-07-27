@@ -77,9 +77,9 @@ var Stats = function (_abstract) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                this.setText("t1", status.proc);
-                this.setText("t2", status.mem);
-                this.setText("t5", Math.ceil(parseInt(status.temp)) + "°C");
+                this.setTextRus("t1", status.proc);
+                this.setTextRus("t2", status.mem);
+                this.setTextRus("t5", Math.ceil(parseInt(status.temp)) + "°C");
 
                 this.nextion.addToWaveForm(3, 0, parseInt(status.proc));
                 this.nextion.addToWaveForm(5, 0, parseInt(status.mem));

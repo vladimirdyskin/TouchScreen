@@ -67,7 +67,7 @@ var Home = function (_abstract) {
                         idxD = 0;
                         idxF = 0;
                         _context.next = 11;
-                        return this.setText("t3", this.profiles[idxP].ProfileID + ": " + this.profiles[idxP].Title);
+                        return this.setTextRus("t3", this.profiles[idxP].ProfileID + ": " + this.profiles[idxP].Title);
 
                      case 11:
                         if (!options) {
@@ -113,12 +113,12 @@ var Home = function (_abstract) {
 
                         this.addListener("click_b3", function (e) {
                            idxP = Math.abs((idxP - 1) % _this2.profiles.length);
-                           _this2.setText("t3", _this2.profiles[idxP].ProfileID + ": " + _this2.profiles[idxP].Title);
+                           _this2.setTextRus("t3", _this2.profiles[idxP].ProfileID + ": " + _this2.profiles[idxP].Title);
                         });
 
                         this.addListener("click_b4", function (e) {
                            idxP = (idxP + 1) % _this2.profiles.length;
-                           _this2.setText("t3", _this2.profiles[idxP].ProfileID + ": " + _this2.profiles[idxP].Title);
+                           _this2.setTextRus("t3", _this2.profiles[idxP].ProfileID + ": " + _this2.profiles[idxP].Title);
                         });
 
                         pth = [];
@@ -143,7 +143,7 @@ var Home = function (_abstract) {
                               fin = fs.readdirSync(pth[idxD]);
                               fin = fin.filter(_this2.cbFile, _this2);
                            } while (_this2.config.autoFetch === "true" && _this2.config.showAll === "false" && fin.length == 0 && idxD < pth.length);
-                           _this2.setText("t6", lbl[idxD]);
+                           _this2.setTextRus("t6", lbl[idxD]);
                            _this2.list(idxF, fin);
                         });
 
@@ -151,7 +151,7 @@ var Home = function (_abstract) {
 
                         this.addListener("click_b6", function (e) {
                            idxD = Math.abs((idxD - 1) % lbl.length);
-                           _this2.setText("t6", lbl[idxD]);
+                           _this2.setTextRus("t6", lbl[idxD]);
                            fin = fs.readdirSync(pth[idxD]);
                            fin = fin.filter(_this2.cbFile, _this2);
                            idxF = 0;
@@ -160,7 +160,7 @@ var Home = function (_abstract) {
 
                         this.addListener("click_b7", function (e) {
                            idxD = (idxD + 1) % lbl.length;
-                           _this2.setText("t6", lbl[idxD]);
+                           _this2.setTextRus("t6", lbl[idxD]);
                            fin = fs.readdirSync(pth[idxD]);
                            fin = fin.filter(_this2.cbFile, _this2);
                            idxF = 0;
@@ -239,24 +239,24 @@ var Home = function (_abstract) {
                   switch (_context2.prev = _context2.next) {
                      case 0:
                         if (fin.length > 0) {
-                           this.setText("b9", fin[index + 0]);
+                           this.setTextRus("b9", fin[index + 0]);
                         } else {
-                           this.setText("b9", "");
+                           this.setTextRus("b9", "");
                         }
                         if (fin.length > 1) {
-                           this.setText("b10", fin[index + 1]);
+                           this.setTextRus("b10", fin[index + 1]);
                         } else {
-                           this.setText("b10", "");
+                           this.setTextRus("b10", "");
                         }
                         if (fin.length > 2) {
-                           this.setText("b11", fin[index + 2]);
+                           this.setTextRus("b11", fin[index + 2]);
                         } else {
-                           this.setText("b11", "");
+                           this.setTextRus("b11", "");
                         }
                         if (fin.length > 3) {
-                           this.setText("b12", fin[index + 3]);
+                           this.setTextRus("b12", fin[index + 3]);
                         } else {
-                           this.setText("b12", "");
+                           this.setTextRus("b12", "");
                         }
 
                      case 4:

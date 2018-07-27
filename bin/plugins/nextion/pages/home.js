@@ -48,13 +48,13 @@ var Home = function (_abstract) {
 
               case 2:
                 _context2.next = 4;
-                this.setTextRus("t6", "Работает!!!");
-                return this.setText("t0", "Not Printing");
+                this.setTextRus("t6", "Нет печати");
+                return this.setTextRus("t0", "Нет печати");
 
               case 4:
                 ip = require("ip");
                 _context2.next = 7;
-                return this.setText("b6", ip.address());
+                return this.setTextRus("b6", ip.address());
 
               case 7:
                 if (!options) {
@@ -77,7 +77,7 @@ var Home = function (_abstract) {
                 exec = require('child_process').exec;
 
                 this.setScreen("progress");
-                this.setText("t0", "Shutdown in progress...");
+                this.setTextRus("t0", "Выключение...");
                 exec('shutdown now', function (error, stdout, stderr) {});
                 return _context2.abrupt("return", _context.stop());
 
@@ -95,7 +95,7 @@ var Home = function (_abstract) {
                 exec = require('child_process').exec;
 
                 this.setScreen("progress");
-                this.setText("t0", "Reboot in progress...");
+                this.setTextRus("t0", "Перезагрузка...");
                 exec('shutdown -r now', function (error, stdout, stderr) {});
                 return _context2.abrupt("return", _context.stop());
 
@@ -111,7 +111,7 @@ var Home = function (_abstract) {
 
                 this.addListener("click_b6", function (e) {
                   _this2.changePage("confirm", {
-                    text: "Are you sure you want to shutdown?",
+                    text: "Выключить?",
                     confirmType: "shutdown",
                     returnPage: "home"
                   });
@@ -119,7 +119,7 @@ var Home = function (_abstract) {
 
                 this.addListener("click_b5", function (e) {
                   _this2.changePage("confirm", {
-                    text: "Are you sure you want to reboot?",
+                    text: "Перезагрузить?",
                     confirmType: "reboot",
                     returnPage: "home"
                   });

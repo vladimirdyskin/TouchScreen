@@ -158,7 +158,7 @@ var ZAxis = function (_abstract) {
 
                   console.log("click_b14");
                      _this2.changePage("confirm", {
-                       text: "Ehat do datchika?\rwarning!\rwarning",
+                       text: "Поднять платформу до датчика?\rВнимание!",
                        confirmType: "dodatchika",
                        returnPage: "zAxis"
                        });
@@ -176,7 +176,7 @@ var ZAxis = function (_abstract) {
                 this.addListener("click_b15", function (e) {
                   //Calibrovka
                   _this2.changePage("confirm", {
-                    text: "Kalibrovka?\rwarning!\rwarning",
+                    text: "Калибровка?\rВНИМАНИЕ!\rоткрутите калибровочные болты",
                     confirmType: "calibrovka",
                     returnPage: "zAxis"
                     });
@@ -194,19 +194,19 @@ var ZAxis = function (_abstract) {
 
                 this.addListener("click_b18", function () {
                   this.zMove = "0.1";
-                  return this.setText("t7", "0.1");
+                  return this.setTextRus("t7", "0.1");
                 });
                 this.addListener("click_b11", function () {
                   this.zMove = "1";
-                  return this.setText("t7", "1");
+                  return this.setTextRus("t7", "1");
                 });
                 this.addListener("click_b10", function () {
                   this.zMove = "10";
-                  return this.setText("t7", "10");
+                  return this.setTextRus("t7", "10");
                 });
                 this.addListener("click_b9", function () {
                   this.zMove = "100";
-                  return this.setText("t7", "100");
+                  return this.setTextRus("t7", "100");
                 });
 
               case 18:
@@ -247,11 +247,11 @@ var ZAxis = function (_abstract) {
                 currentMm = status.CurrentHeight / (360 / this.setup.MotorDegree * this.setup.MicroStep / this.setup.LeadscrewPitch);
                 total = this.setup.ZAxisHeight / (360 / this.setup.MotorDegree * this.setup.MicroStep / this.setup.LeadscrewPitch);
                 _context6.next = 8;
-                return this.setText("t1", currentMm + "mm");
+                return this.setTextRus("t1", currentMm + "mm");
 
               case 8:
                 _context6.next = 10;
-                return this.setText("t2", total + "mm");
+                return this.setTextRus("t2", total + "mm");
 
               case 10:
               case "end":

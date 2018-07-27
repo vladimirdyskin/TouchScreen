@@ -191,17 +191,17 @@ var PrintSettings = function (_abstract) {
                 this.profile = this.profiles[_lodash2.default.findIndex(this.profiles, { ProfileID: this.plate.ProfileID })];
 
                 _context3.next = 13;
-                return this.setText("t7", this.profile.CureTime);
+                return this.setTextRus("t7", this.profile.CureTime);
 
               case 13:
                 remaining_time = Math.round((status.LayersCount - status.LayerID) * status.LayerTime / 1000000000 / 60);
                 total_time = Math.round(status.LayersCount * status.LayerTime / 1000000000 / 60);
                 _context3.next = 17;
-                return this.setText("t11", status.LayerID + "/" + status.LayersCount);
+                return this.setTextRus("t11", status.LayerID + "/" + status.LayersCount);
 
               case 17:
                 _context3.next = 19;
-                return this.setText("t10", remaining_time + " of " + total_time + "min");
+                return this.setTextRus("t10", remaining_time + " из " + total_time + "мин");
 
               case 19:
               case "end":

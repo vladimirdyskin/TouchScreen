@@ -47,7 +47,7 @@ var Confirm = function (_abstract) {
 
               case 2:
                 _context.next = 4;
-                return this.setText("t0", options.text);
+                return this.setTextRus("t0", options.text);
 
               case 4:
 

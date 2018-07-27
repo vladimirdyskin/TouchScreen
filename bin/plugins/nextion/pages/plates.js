@@ -125,11 +125,11 @@ var Plates = function (_abstract) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 this.currentIndex = index;
-                this.setText("b4", index + 1 + ". " + this.plates[index].Path);
-                this.setText("b5", index + 2 + ". " + this.plates[index + 1].Path);
-                this.setText("b6", index + 3 + ". " + this.plates[index + 2].Path);
-                this.setText("b7", index + 4 + ". " + this.plates[index + 3].Path);
-                this.setText("b8", index + 5 + ". " + this.plates[index + 4].Path);
+                this.setTextRus("b4", index + 1 + ". " + this.plates[index].Path);
+                this.setTextRus("b5", index + 2 + ". " + this.plates[index + 1].Path);
+                this.setTextRus("b6", index + 3 + ". " + this.plates[index + 2].Path);
+                this.setTextRus("b7", index + 4 + ". " + this.plates[index + 3].Path);
+                this.setTextRus("b8", index + 5 + ". " + this.plates[index + 4].Path);
 
               case 6:
               case "end":

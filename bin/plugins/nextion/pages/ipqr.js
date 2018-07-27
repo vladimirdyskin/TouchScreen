@@ -47,11 +47,11 @@ var Confirm = function (_abstract) {
 
               case 2:
                 _context.next = 4;
-                return this.setText("t1", options.text);
+                return this.setTextRus("t1", options.text);
 
               case 4:
                 _context.next = 6;
-                return this.setText("qr2", options.text);
+                return this.setTextRus("qr2", options.text);
 
               case 6:
 

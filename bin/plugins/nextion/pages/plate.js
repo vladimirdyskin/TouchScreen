@@ -80,10 +80,10 @@ var Plate = function (_abstract) {
                 this.imageWidth = _context3.sent;
 
 
-                this.setText("t0", this.plate.Path);
-                this.setText("t1", this.profile.Title + " (" + this.profile.Depth + "um)");
-                this.setText("t3", this.plate.TotalSolidArea + "ml");
-                this.setText("t7", this.plate.LayersCount + " layers");
+                this.setTextRus("t0", this.plate.Path);
+                this.setTextRus("t1", this.profile.Title + " (" + this.profile.Depth + "um)");
+                this.setTextRus("t3", this.plate.TotalSolidArea + "ml");
+                this.setTextRus("t7", this.plate.LayersCount + " слоев");
 
                 this.addListener("click_b1", function (e) {
                   _this2.changePage("plates");
@@ -179,10 +179,10 @@ var Plate = function (_abstract) {
                 this.index = index == 0 ? 1 : index;
 
                 _context4.next = 3;
-                return this.setText("t12", "Loading " + this.index + "/" + this.plate.LayersCount);
+                return this.setTextRus("t12", "Загрузка " + this.index + "/" + this.plate.LayersCount);
 
               case 3:
-                this.setText("t9", "layer " + this.index + "/" + this.plate.LayersCount);
+                this.setTextRus("t9", "слой " + this.index + "/" + this.plate.LayersCount);
                 _context4.next = 6;
                 return this.nanoDLP.getCurrentPlateLayer(this.plate.PlateID, this.index);
 
