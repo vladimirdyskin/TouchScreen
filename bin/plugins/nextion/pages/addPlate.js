@@ -147,17 +147,17 @@ var Home = function (_abstract) {
                            do {
                               idxD++;
                               // Check if the file exists in the current directory.
-                              fs.access(pth[idxD], fs.constants.F_OK, (err) => {
-                                //console.log(`${file} ${err ? 'does not exist' : 'exists'}`);
-                                if (err){
-                                  console.log("ok");
-                                  //throw err;
-                                  this.changePage("plates");
-                                  _context.next = "end";
-                                  break;
+
+
+                              fs.access(pth[idxD], fs.constants.F_OK | fs.constants.W_OK, (err) => {
+                                if (err) {
+                                  console.error(
+                                    `${file} ${err.code === 'ENOENT' ? 'does not exist' : 'is read-only'}`);
+                                } else {
+                                  console.log(`${file} exists, and it is writable`);
                                 }
-                                //console.log(data);
                               });
+
                               fin = fs.readdirSync(pth[idxD]);
                               fin = fin.filter(_this2.cbFile, _this2);
                            } while (_this2.config.autoFetch === "true" && _this2.config.showAll === "false" && fin.length == 0 && idxD < pth.length);
