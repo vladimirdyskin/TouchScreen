@@ -145,14 +145,14 @@ var Home = function (_abstract) {
                               // Check if the file exists in the current directory.
                               //
                               //
-                              // fs.access(pth[idxD], fs.constants.F_OK | fs.constants.W_OK, (err) => {
-                              //   if (err) {
-                              //     console.error(
-                              //       `${file} ${err.code === 'ENOENT' ? 'does not exist' : 'is read-only'}`);
-                              //   } else {
-                              //     console.log(`${file} exists, and it is writable`);
-                              //   }
-                              // });
+                              fs.access(pth[idxD], fs.constants.F_OK | fs.constants.W_OK, (err) => {
+                                if (err) {
+                                  console.error(
+                                    `${file} ${err.code === 'ENOENT' ? 'does not exist' : 'is read-only'}`);
+                                } else {
+                                  console.log(`${file} exists, and it is writable`);
+                                }
+                              });
 
                               fin = fs.readdirSync(pth[idxD]);
                               fin = fin.filter(_this2.cbFile, _this2);
