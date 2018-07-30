@@ -129,16 +129,8 @@ var Home = function (_abstract) {
                         _context.next = 32;
                         return drivelist.list(function (error, drives) {
                            if (error) {
-<<<<<<< HEAD
-                            //_this2.changePage("plates");
-                              console.log("zdes");
-                              this.changePage("plates");
-                              _context.next = "end";
-                              break;
                               //throw error;
-=======
                               throw error;
->>>>>>> parent of 9fce604... 3
                            }
                            drives.forEach(function (drive) {
                               console.log(drive);
@@ -151,16 +143,16 @@ var Home = function (_abstract) {
                            do {
                               idxD++;
                               // Check if the file exists in the current directory.
-
-
-                              fs.access(pth[idxD], fs.constants.F_OK | fs.constants.W_OK, (err) => {
-                                if (err) {
-                                  console.error(
-                                    `${file} ${err.code === 'ENOENT' ? 'does not exist' : 'is read-only'}`);
-                                } else {
-                                  console.log(`${file} exists, and it is writable`);
-                                }
-                              });
+                              //
+                              //
+                              // fs.access(pth[idxD], fs.constants.F_OK | fs.constants.W_OK, (err) => {
+                              //   if (err) {
+                              //     console.error(
+                              //       `${file} ${err.code === 'ENOENT' ? 'does not exist' : 'is read-only'}`);
+                              //   } else {
+                              //     console.log(`${file} exists, and it is writable`);
+                              //   }
+                              // });
 
                               fin = fs.readdirSync(pth[idxD]);
                               fin = fin.filter(_this2.cbFile, _this2);
