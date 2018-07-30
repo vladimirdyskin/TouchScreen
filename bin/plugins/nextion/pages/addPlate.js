@@ -129,9 +129,8 @@ var Home = function (_abstract) {
                         _context.next = 32;
                         return drivelist.list(function (error, drives) {
                            if (error) {
-                             _this2.changePage("plates");
-                             break;
-                              //throw error;
+                            //_this2.changePage("plates");
+                              throw error;
                            }
                            drives.forEach(function (drive) {
                               console.log(drive);
@@ -139,6 +138,9 @@ var Home = function (_abstract) {
                               lbl.push(drive.description + " | " + drive.mountpoints[0].path);
                            });
 
+                           if(pth.length == 0) {
+                                return _context.abrupt("return", this.changePage("plates"));
+                           }
                            idxD = -1;
                            do {
                               idxD++;
