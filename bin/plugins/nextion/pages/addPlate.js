@@ -129,7 +129,8 @@ var Home = function (_abstract) {
                         _context.next = 32;
                         return drivelist.list(function (error, drives) {
                            if (error) {
-                              throw error;
+                             _this2.changePage("plates");
+                              //throw error;
                            }
                            drives.forEach(function (drive) {
                               console.log(drive);
