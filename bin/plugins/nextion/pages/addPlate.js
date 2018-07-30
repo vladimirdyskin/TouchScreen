@@ -130,6 +130,7 @@ var Home = function (_abstract) {
                         return drivelist.list(function (error, drives) {
                            if (error) {
                              _this2.changePage("plates");
+                             break;
                               //throw error;
                            }
                            drives.forEach(function (drive) {
