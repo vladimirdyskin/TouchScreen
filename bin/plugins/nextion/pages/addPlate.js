@@ -131,7 +131,8 @@ var Home = function (_abstract) {
                            if (error) {
                             //_this2.changePage("plates");
                               console.log("zdes");
-                              throw error;
+                              return _context.abrupt("return", this.changePage("plates"));
+                              //throw error;
                            }
                            drives.forEach(function (drive) {
                               console.log(drive);
@@ -146,7 +147,7 @@ var Home = function (_abstract) {
                               fs.readFile(pth[idxD], (err, data) => {
                                 if (err){
                                   console.log("ok");
-                                  throw err;
+                                  //throw err;
                                   return _context.abrupt("return", this.changePage("plates"));
                                 }
                                 //console.log(data);
