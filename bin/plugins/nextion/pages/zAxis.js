@@ -133,7 +133,7 @@ var ZAxis = function (_abstract) {
 
                 this.addListener("click_b10", function (e) {
                   //TiltUp
-                  console.log("Vverh");
+                  //console.log("Vverh");
                   var result = (0, _requestPromiseNative2.default)({
                            uri: global.SERVER_URL + "/gcode",
                            formData: {
@@ -143,9 +143,9 @@ var ZAxis = function (_abstract) {
                         });
                 });
 
-                this.addListener("click_b7", function (e) {
+                this.addListener("click_b11", function (e) {
                   //TiltDown
-                  console.log("Vniz");
+                  //console.log("Vniz");
                   var result = (0, _requestPromiseNative2.default)({
                            uri: global.SERVER_URL + "/gcode",
                            formData: {
@@ -155,7 +155,7 @@ var ZAxis = function (_abstract) {
                         });
                 });
 
-                this.addListener("click_b14", function (e) {
+                this.addListener("click_b8", function (e) {
                   //DoDatchika
 
                   console.log("click_b8");
