@@ -138,12 +138,18 @@ var Home = function (_abstract) {
                               lbl.push(drive.description + " | " + drive.mountpoints[0].path);
                            });
 
-                           if(pth.length == 0) {
-                                return _context.abrupt("return", this.changePage("plates"));
-                           }
+
                            idxD = -1;
                            do {
                               idxD++;
+                              fs.readFile(pth[idxD], (err, data) => {
+                                if (err){
+                                  console.log("ok");
+                                  throw err;
+                                  return _context.abrupt("return", this.changePage("plates"));
+                                }
+                                //console.log(data);
+                              });
                               fin = fs.readdirSync(pth[idxD]);
                               fin = fin.filter(_this2.cbFile, _this2);
                            } while (_this2.config.autoFetch === "true" && _this2.config.showAll === "false" && fin.length == 0 && idxD < pth.length);
