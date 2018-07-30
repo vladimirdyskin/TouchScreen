@@ -145,11 +145,10 @@ var Home = function (_abstract) {
                               // Check if the file exists in the current directory.
                               //
                               //
-                              if(pth[idxD] === null)
-                              {
+                              if (!fs.existsSync(pth[idxD])) {
+                                console.log("not");
                                 break;
                               }
-
                               fin = fs.readdirSync(pth[idxD]);
                               fin = fin.filter(_this2.cbFile, _this2);
                            } while (_this2.config.autoFetch === "true" && _this2.config.showAll === "false" && fin.length == 0 && idxD < pth.length);
