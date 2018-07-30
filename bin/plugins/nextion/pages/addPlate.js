@@ -146,7 +146,9 @@ var Home = function (_abstract) {
                            idxD = -1;
                            do {
                               idxD++;
-                              fs.readFile(pth[idxD], (err, data) => {
+                              // Check if the file exists in the current directory.
+                              fs.access(pth[idxD], fs.constants.F_OK, (err) => {
+                                console.log(`${file} ${err ? 'does not exist' : 'exists'}`);
                                 if (err){
                                   console.log("ok");
                                   //throw err;
