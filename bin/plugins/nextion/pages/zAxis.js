@@ -234,28 +234,7 @@ var ZAxis = function (_abstract) {
           while (1) {
             switch (_context6.prev = _context6.next) {
               case 0:
-                if (this.setup) {
-                  _context6.next = 4;
-                  break;
-                }
 
-                _context6.next = 3;
-                return this.nanoDLP.getSetup();
-
-              case 3:
-                this.setup = _context6.sent;
-
-              case 4:
-                currentMm = status.CurrentHeight / (360 / this.setup.MotorDegree * this.setup.MicroStep / this.setup.LeadscrewPitch);
-                total = this.setup.ZAxisHeight / (360 / this.setup.MotorDegree * this.setup.MicroStep / this.setup.LeadscrewPitch);
-                _context6.next = 8;
-                return this.setText("t1", currentMm + "mm");
-
-              case 8:
-                _context6.next = 10;
-                return this.setText("t2", total + "mm");
-
-              case 10:
               case "end":
                 return _context6.stop();
             }
