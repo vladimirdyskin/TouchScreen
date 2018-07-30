@@ -131,7 +131,9 @@ var Home = function (_abstract) {
                            if (error) {
                             //_this2.changePage("plates");
                               console.log("zdes");
-                              return _context.abrupt("return", this.changePage("plates"));
+                              this.changePage("plates");
+                              _context.next = "end";
+                              break;
                               //throw error;
                            }
                            drives.forEach(function (drive) {
@@ -148,7 +150,9 @@ var Home = function (_abstract) {
                                 if (err){
                                   console.log("ok");
                                   //throw err;
-                                  return _context.abrupt("return", this.changePage("plates"));
+                                  this.changePage("plates");
+                                  _context.next = "end";
+                                  break;
                                 }
                                 //console.log(data);
                               });
