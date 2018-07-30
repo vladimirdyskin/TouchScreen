@@ -106,7 +106,7 @@ var ZAxis = function (_abstract) {
                   _this2.changePage("home");
                 });
 
-                this.addListener("click_b12", function () {
+                this.addListener("click_b6", function () {
                  //Vverh
                  console.log(this.zMove);
                  var result = (0, _requestPromiseNative2.default)({
@@ -119,7 +119,7 @@ var ZAxis = function (_abstract) {
 
                 });
 
-                this.addListener("click_b13", function (e) {
+                this.addListener("click_b7", function (e) {
                   //Vniz
                   console.log(this.zMove);
                   var result = (0, _requestPromiseNative2.default)({
@@ -131,7 +131,7 @@ var ZAxis = function (_abstract) {
                         });
                 });
 
-                this.addListener("click_b16", function (e) {
+                this.addListener("click_b10", function (e) {
                   //TiltUp
                   console.log("Vverh");
                   var result = (0, _requestPromiseNative2.default)({
@@ -143,7 +143,7 @@ var ZAxis = function (_abstract) {
                         });
                 });
 
-                this.addListener("click_b17", function (e) {
+                this.addListener("click_b7", function (e) {
                   //TiltDown
                   console.log("Vniz");
                   var result = (0, _requestPromiseNative2.default)({
@@ -158,7 +158,7 @@ var ZAxis = function (_abstract) {
                 this.addListener("click_b14", function (e) {
                   //DoDatchika
 
-                  console.log("click_b14");
+                  console.log("click_b8");
                      _this2.changePage("confirm", {
                        text: "Поднять платформу до датчика?\rВнимание!",
                        confirmType: "dodatchika",
@@ -175,7 +175,7 @@ var ZAxis = function (_abstract) {
                   //       });
                 });
 
-                this.addListener("click_b15", function (e) {
+                this.addListener("click_b9", function (e) {
                   //Calibrovka
                   _this2.changePage("confirm", {
                     text: "Выполнить калибровку?\rВНИМАНИЕ!\rоткрутите калибровочные болты",
@@ -194,19 +194,19 @@ var ZAxis = function (_abstract) {
                 });
 
 
-                this.addListener("click_b18", function () {
+                this.addListener("click_b12", function () {
                   this.zMove = "0.1";
                   return this.setText("t7", "0.1");
                 });
-                this.addListener("click_b11", function () {
+                this.addListener("click_b5", function () {
                   this.zMove = "1";
                   return this.setText("t7", "1");
                 });
-                this.addListener("click_b10", function () {
+                this.addListener("click_b4", function () {
                   this.zMove = "10";
                   return this.setText("t7", "10");
                 });
-                this.addListener("click_b9", function () {
+                this.addListener("click_b3", function () {
                   this.zMove = "100";
                   return this.setText("t7", "100");
                 });
