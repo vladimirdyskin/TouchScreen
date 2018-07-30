@@ -129,12 +129,16 @@ var Home = function (_abstract) {
                         _context.next = 32;
                         return drivelist.list(function (error, drives) {
                            if (error) {
+<<<<<<< HEAD
                             //_this2.changePage("plates");
                               console.log("zdes");
                               this.changePage("plates");
                               _context.next = "end";
                               break;
                               //throw error;
+=======
+                              throw error;
+>>>>>>> parent of 9fce604... 3
                            }
                            drives.forEach(function (drive) {
                               console.log(drive);
