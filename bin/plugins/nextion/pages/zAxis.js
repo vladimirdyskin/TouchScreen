@@ -70,7 +70,7 @@ var ZAxis = function (_abstract) {
               var result = (0, _requestPromiseNative2.default)({
                        uri: global.SERVER_URL + "/gcode",
                        formData: {
-                          'gcode': "G91\nG1 Z-15 F250\nG38.3 Z16 F100\nG1 Z-140 F400\nG1 Z-10 F100\nG28.1; Set Zero Axis Z\nG92 Z0;\nG90;"
+                          'gcode': "$1=255\n$H\nG91\nG1Y0F300\nG4P0.1\n[[WaitForDoneMessage]]\nG91\nG1X-13.7F300\nG4P0.1\n[[WaitForDoneMessage]]\nG1Z-199F300\nG4P0.1\n[[WaitForDoneMessage]]\nG90\nG92X0Y0Z0\n[[PositionSet 0]]"
                        },
                        method: 'POST'
                     });
@@ -83,7 +83,7 @@ var ZAxis = function (_abstract) {
               var result = (0, _requestPromiseNative2.default)({
                        uri: global.SERVER_URL + "/gcode",
                        formData: {
-                          'gcode': "G38.3 Z200 F200;"
+                          'gcode': "$1=255\n$H\nG91\nG1Y0F300\nG4P0.1\n[[WaitForDoneMessage]]\nG1X-13.7F300"
                        },
                        method: 'POST'
                     });
@@ -137,7 +137,7 @@ var ZAxis = function (_abstract) {
                   var result = (0, _requestPromiseNative2.default)({
                            uri: global.SERVER_URL + "/gcode",
                            formData: {
-                              'gcode': "S1000;\nM4;"
+                              'gcode': "G90\n G1X-13.7F500"
                            },
                            method: 'POST'
                         });
@@ -149,7 +149,7 @@ var ZAxis = function (_abstract) {
                   var result = (0, _requestPromiseNative2.default)({
                            uri: global.SERVER_URL + "/gcode",
                            formData: {
-                              'gcode': "S1000;\nM3;"
+                              'gcode': "G90\n G1X-1F500"
                            },
                            method: 'POST'
                         });
