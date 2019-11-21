@@ -7,7 +7,7 @@
   },
   "plugins":{
     "nextion":{
-      "port":"dev/tty.Bluetooth-Incoming-Port",
+      "port":"/dev/ttyS2",
       "sleep": 65535
     },
     "plates":{
