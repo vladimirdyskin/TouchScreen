@@ -28,7 +28,7 @@ var ScreenManager = function () {
     this.nanoDLP = nanoDLPService;
     this.plugins = [];
 
-    this.registerPlugin("pushBullet");
+    //this.registerPlugin("pushBullet");
     this.registerPlugin("nextion");
   }
 
