@@ -7,7 +7,7 @@
   },
   "plugins":{
     "nextion":{
-      "port":"/dev/ttyS2",
+      "port":"/dev/ttyS1",
       "sleep": 65535
     },
     "plates":{
