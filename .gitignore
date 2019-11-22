@@ -6,3 +6,4 @@ build/
 
 errorOutput.log
 output.log
+package-lock.json

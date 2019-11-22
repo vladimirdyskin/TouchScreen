@@ -11,6 +11,10 @@ var _abstract2 = require("./abstract.js");
 
 var _abstract3 = _interopRequireDefault(_abstract2);
 
+var _requestPromiseNative = require("request-promise-native");
+
+var _requestPromiseNative2 = _interopRequireDefault(_requestPromiseNative);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
@@ -69,17 +73,19 @@ var Home = function (_abstract) {
                   break;
                 }
 
-                if (!(options.confirmType === "shutdown")) {
+                if (!(options.confirmType === "dodoatchika")) {
                   _context2.next = 16;
                   break;
                 }
+                  console.log("dodatchika");
 
-                exec = require('child_process').exec;
-
-                this.setScreen("progress");
-                this.setTextRus("t0", "Выключение...");
-                exec('shutdown now', function (error, stdout, stderr) {});
-                return _context2.abrupt("return", _context.stop());
+                  var result = (0, _requestPromiseNative2.default)({
+                  uri: global.SERVER_URL + "/gcode",
+                  formData: {
+                    'gcode': "$H\n"
+                  },
+                    method: 'POST'
+                  });
 
               case 16:
                 if (!options.confirmResult) {
@@ -111,8 +117,8 @@ var Home = function (_abstract) {
 
                 this.addListener("click_b6", function (e) {
                   _this2.changePage("confirm", {
-                    text: "Выключить?",
-                    confirmType: "shutdown",
+                    text: "Оси до датчиков?",
+                    confirmType: "dodoatchika",
                     returnPage: "home"
                   });
                 });

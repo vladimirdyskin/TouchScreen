@@ -3,6 +3,12 @@ VERSION=v6.4.0;
 # Creates directory for downloads, and downloads node
 cd ~/ && mkdir temp && cd temp;
 wget https://nodejs.org/dist/v6.4.0/node-v6.4.0-linux-armv6l.tar.gz;
+
+wget https://nodejs.org/dist/v6.4.0/node-v6.4.0-linux-x64.tar.gz
+tar -xzf node-v6.4.0-linux-x64.tar.gz;
+sudo rm node-v6.4.0-linux-x64.tar.gz;
+sudo mv node-v6.4.0-linux-x64 /opt/nodejs/;
+
 tar -xzf node-v6.4.0-linux-armv6l.tar.gz;
 # Remove the tar after extracing it.
 sudo rm node-v6.4.0-linux-armv6l.tar.gz;
@@ -19,7 +25,7 @@ sudo unlink /usr/bin/npm;
 sudo unlink /usr/sbin/npm;
 sudo unlink /sbin/npm;
 sudo unlink /usr/local/bin/npm;
-# Create symlinks to node && npm
+# Create symlinks to node && npm/op 
 sudo ln -s /opt/nodejs/bin/node /usr/bin/node;
 sudo ln -s /opt/nodejs/bin/node /usr/sbin/node;
 sudo ln -s /opt/nodejs/bin/node /sbin/node;
