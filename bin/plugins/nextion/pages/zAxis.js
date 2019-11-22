@@ -70,7 +70,7 @@ var ZAxis = function (_abstract) {
               var result = (0, _requestPromiseNative2.default)({
                        uri: global.SERVER_URL + "/gcode",
                        formData: {
-                          'gcode': "$1=255\n$H\nG91\nG1Y0F300\nG4P0.1\n[[WaitForDoneMessage]]\nG91\nG1X-13.7F300\nG4P0.1\n[[WaitForDoneMessage]]\nG1Z-199F300\nG4P0.1\n[[WaitForDoneMessage]]\nG90\nG92X0Y0Z0\n[[PositionSet 0]]"
+                          'gcode': "$1=255\n$H\nG91\nG1X-12.7F300\nG4P0.1\n[[WaitForDoneMessage]]\nG1Z-199F300\nG4P0.1\n[[WaitForDoneMessage]]\nG90\nG92X0Y0Z0\n[[PositionSet 0]]"
                        },
                        method: 'POST'
                     });

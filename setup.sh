@@ -38,7 +38,7 @@ sudo ln -s /opt/nodejs/bin/npm /usr/local/bin/npm;
 
 #sudo sed -i.bak "1i#\!/bin/sh \-e\nnode /home/pi/nextion/bin/index.js 2> /home/pi/nextion/errorOutput.log > /home/pi/nextion/output.log &" /etc/rc.local
 
-npm install -G babel-polyfill pngjs pushbullet request-promise-native serialport sharp three debug
+npm install -G babel-polyfill pngjs iconv pushbullet request-promise-native serialport sharp three debug
 
 node /home/pi/nextion/bin/index.js 2> /home/pi/nextion/errorOutput.log > /home/pi/nextion/output.log
 git pull origin master
