@@ -115,7 +115,7 @@ var NextionService = function (_EventEmitter) {
               case 6:
 
                 this.port = new _serialport2.default(this.config.port, {
-                  autoOpen: false, baudRate: 115200 });
+                  autoOpen: false, baudRate: 921600 });
                 _context.next = 9;
                 return new Promise(function (resolve, reject) {
                   return _this2.port.open(resolve);
@@ -714,6 +714,7 @@ var NextionService = function (_EventEmitter) {
 
           case "numericData":
             debug("emit : ", "number");
+            console.log("data " + result.data[0]);
             this.emit("number", result.data[0]);
             break;
 

@@ -50,11 +50,13 @@ var Plate = function (_abstract) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
+
                 return this.setScreen("plate");
 
               case 2:
 
                 this.plate = plate;
+
                 _context3.next = 5;
                 return this.nanoDLP.getProfiles();
 
@@ -63,21 +65,24 @@ var Plate = function (_abstract) {
 
                 this.profile = this.profiles[_lodash2.default.findIndex(this.profiles, { ProfileID: this.plate.ProfileID })];
 
-                _context3.next = 9;
-                return this.getValue("t12.x");
+//                _context3.next = 9;
+//                return this.getValue("t12.x");
+               _context3.next = 15;
+               this.index = 1;
+               //return this.getValue("t12.x");
 
-              case 9:
-                this.imageX = _context3.sent;
-                _context3.next = 12;
-                return this.getValue("t12.y");
+//              case 9:
+//                this.imageX = _context3.sent;
+//                _context3.next = 12;
+//                return this.getValue("t12.y");
 
-              case 12:
-                this.imageY = _context3.sent;
-                _context3.next = 15;
-                return this.getValue("t12.w");
+//              case 12:
+//                this.imageY = _context3.sent;
+//                _context3.next = 15;
+//                return this.getValue("t12.w");
 
               case 15:
-                this.imageWidth = _context3.sent;
+                //this.imageWidth = _context3.sent;
 
 
                 this.setTextRus("t0", this.plate.Path);
@@ -146,6 +151,7 @@ var Plate = function (_abstract) {
 
               case 27:
               case "end":
+                this.index = 0;
                 return _context3.stop();
             }
           }
@@ -176,7 +182,7 @@ var Plate = function (_abstract) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                this.index = index == 0 ? 1 : index;
+                this.index = index;// == 0 ? 1 : index;
 
                 _context4.next = 3;
                 return this.setTextRus("t12", "Загрузка " + this.index + "/" + this.plate.LayersCount);
@@ -195,8 +201,9 @@ var Plate = function (_abstract) {
                 }
 
                 _context4.next = 10;
-                return this.nextion.displayBlackWhiteImage(image, this.imageX, this.imageY, this.imageWidth).catch(function (e) {
-                  return console.error(e);
+//                return this.nextion.displayBlackWhiteImage(image, this.imageX, this.imageY, this.imageWidth).catch(function (e) {
+                  return this.nextion.displayBlackWhiteImage(image, 228, 75, 246).catch(function (e) {
+                    return console.error(e);
                 });
 
               case 10:
