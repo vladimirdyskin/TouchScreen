@@ -83,7 +83,7 @@ var Settings = function (_abstract) {
               case 0:
                 this.setTextRus("t1", status.proc);
                 this.setTextRus("t2", status.mem);
-                this.setTextRus("t5", Math.ceil(parseInt(status.temp)) + "°C");
+                this.setTextRus("t5", status.temp);
                 console.log(status.temp);
 
 
