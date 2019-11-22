@@ -84,6 +84,8 @@ var Settings = function (_abstract) {
                 this.setTextRus("t1", status.proc);
                 this.setTextRus("t2", status.mem);
                 this.setTextRus("t5", Math.ceil(parseInt(status.temp)) + "°C");
+                console.log(status.temp);
+
 
                 this.nextion.addToWaveForm(3, 0, parseInt(status.proc));
                 this.nextion.addToWaveForm(6, 0, parseInt(status.mem));
