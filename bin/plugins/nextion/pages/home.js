@@ -82,7 +82,7 @@ var Home = function (_abstract) {
                   var result = (0, _requestPromiseNative2.default)({
                   uri: global.SERVER_URL + "/gcode",
                   formData: {
-                    'gcode': "$H\n"
+                    'gcode': "$H\n[[Delay 3]]\nG1X-13.7F300"
                   },
                     method: 'POST'
                   });
